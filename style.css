@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #e9f2ff;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #0052b5;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 20px;
+}
+
+.logo h2 {
+    color: white;
+    padding: 20px 0;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 10px;
+    display: block;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background-color: #133e75;
+}
+
+.sign-out {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.sign-out a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-bar input {
+    width: 300px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 13px;
+}
+
+.welcome-card {
+    background-color: #0052b5;
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.welcome-text h1 {
+    margin-bottom: 10px;
+}
+
+.welcome-text p {
+    max-width: 600px;
+}
+
+.profile-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.stats-card,
+.progress-card,
+.activities-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.class-item,
+.activity-item {
+    margin: 15px 0;
+    padding: 12px 15px;
+    background-color: #e9f2ff;
+    border-radius: 8px;
+}
+
+.attachments-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.attachment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e9f2ff;
+    font-size: 13px;
+}
+
+.view-doc {
+    color: #0052b5;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .sidebar {
+        width: 200px;
+    }
+}
+
+.top-header {
+    background-color: transparent;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-title {
+    color: #133e71;
+    font-size: 20px;
+}
+
+.main-wrapper {
+    display: flex;
+    flex: 1;
+    padding: 20px 20px 0 20px;
+    gap: 20px;
+}
+
+.stats-card h3,
+.progress-card h3,
+.activities-card h3,
+.attachments-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.class-item h4,
+.activity-item h4 {
+    font-size: 14px;
+}
+
+.class-item p,
+.activity-item p {
+    font-size: 13px;
+    color: #666;
+}
+
+.class-list, .activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.class-item, .activity-item {
+    background-color: #f8faff;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid #e9f2ff;
+}
+
+.class-item h4, .activity-item h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.pendaftar, .schedule {
+    font-size: 13px;
+    color: #0052b5;
+    margin: 0;
+}
+
+.progress-card, .activities-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.progress-card h3, .activities-card h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Tambahkan styles untuk chart */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.stats-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.stats-card h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}

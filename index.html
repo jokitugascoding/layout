@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-header">
+            <h2 class="main-title">Royal Dashboard</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Cari Kelas, Dokumen, Aktifitas dll...">
+            </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="main-wrapper">
+            <div class="sidebar">
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">Mahasiswa</a></li>
+                        <li><a href="#">Kelas</a></li>
+                        <li><a href="#">Aktifitas</a></li>
+                        <li><a href="#">Statistik</a></li>
+                        <li><a href="#">Dokumen</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </nav>
+                <div class="sign-out">
+                    <a href="#">Sign Out</a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="welcome-card">
+                    <div class="welcome-text">
+                        <h1>Selamat Datang, Priendy Iskhak Sitorus</h1>
+                        <h2>Kelas SI-3N</h2>
+                        <p>Kamu memiliki Statistik, 4 Progres Kelas, 4 Aktifitas Selanjutnya dan 3 Lampiran Dokumen yang ada pada aplikasi ini.</p>
+                    </div>
+                    <div class="profile-image">
+                        <img src="image.jpg" alt="Profile">
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Statistik Section -->
+                    <div class="stats-card">
+                        <h3>Statistik Mahasiswa</h3>
+                        <div class="chart-container">
+                            <canvas id="statsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Progres Kelas Section -->
+                    <div class="progress-card">
+                        <h3>Progres Kelas</h3>
+                        <div class="class-list">
+                            <div class="class-item">
+                                <h4>Matakuliah A</h4>
+                                <p class="pendaftar">78 Pendaftar</p>
+                            </div>
+                            <div class="class-item">
+                                <h4>Matakuliah B</h4>
+                                <p class="pendaftar">30 Pendaftar</p>
+                            </div>
+                            <div class="class-item">
+                                <h4>Matakuliah C</h4>
+                                <p class="pendaftar">40 Pendaftar</p>
+                            </div>
+                            <div class="class-item">
+                                <h4>Matakuliah D</h4>
+                                <p class="pendaftar">10 Pendaftar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aktifitas Section -->
+                    <div class="activities-card">
+                        <h3>Aktifitas Selanjutnya</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <h4>Perkuliahan Daring 1</h4>
+                                <p class="schedule">Senin, 15 Januari 2025</p>
+                            </div>
+                            <div class="activity-item">
+                                <h4>Perkuliahan Daring 1</h4>
+                                <p class="schedule">Selasa, 15 Februari 2025</p>
+                            </div>
+                            <div class="activity-item">
+                                <h4>Perkuliahan Daring 1</h4>
+                                <p class="schedule">Rabu, 15 Maret 2025</p>
+                            </div>
+                            <div class="activity-item">
+                                <h4>Perkuliahan Daring 1</h4>
+                                <p class="schedule">Kamis, 15 April 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lampiran Section -->
+                <div class="attachments-section">
+                    <h3>Lampiran</h3>
+                    <div class="attachment-list">
+                        <div class="attachment-item">
+                            <p>Lampiran Dokumen 1 - Matakuliah A | Tugas Bersama Perkuliahan Daring 1</p>
+                            <a href="#" class="view-doc">Lihat Dokumen</a>
+                        </div>
+                        <div class="attachment-item">
+                            <p>Lampiran Dokumen 2 - Matakuliah B | Tugas Bersama Perkuliahan Daring 1</p>
+                            <a href="#" class="view-doc">Lihat Dokumen</a>
+                        </div>
+                        <div class="attachment-item">
+                            <p>Lampiran Dokumen 3 - Matakuliah C | Tugas Bersama Perkuliahan Daring 1</p>
+                            <a href="#" class="view-doc">Lihat Dokumen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tambahkan script Chart.js sebelum closing body tag -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    const ctx = document.getElementById('statsChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Data A', 'Data B', 'Data C', 'Data D', 'Data E'],
+            datasets: [{
+                type: 'bar',
+                label: 'Statistik',
+                data: [32, 25, 45, 20, 55],
+                backgroundColor: '#0052b5',
+                borderRadius: 4,
+                barThickness: 30,
+            }, {
+                type: 'line',
+                label: 'Avg Point',
+                data: [20, 25, 30, 25, 35],
+                borderColor: '#36A2EB',
+                borderWidth: 2,
+                fill: false,
+                tension: 0.4,
+                pointBackgroundColor: '#fff',
+                pointBorderColor: '#36A2EB',
+                pointBorderWidth: 2,
+                pointRadius: 4,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 60,
+                    ticks: {
+                        stepSize: 10,
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    },
+                    grid: {
+                        color: '#e9f2ff',
+                        drawBorder: false,
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+    </script>
+</body>
+</html>
